@@ -1,4 +1,4 @@
-package net.rbk.minery;
+package net.rbk.shinyandtiny;
 
 
 import net.neoforged.api.distmarker.Dist;
@@ -11,9 +11,9 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 
-@Mod(value = Minery.MODID, dist = Dist.CLIENT)
+@Mod(value = ShinyAndTiny.MODID, dist = Dist.CLIENT)
 
-@EventBusSubscriber(modid = Minery.MODID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ShinyAndTiny.MODID, value = Dist.CLIENT)
 public class MineryClient {
     public MineryClient(ModContainer container) {
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);

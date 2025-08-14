@@ -1,4 +1,4 @@
-package net.rbk.minery.datagen;
+package net.rbk.shinyandtiny.datagen;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -7,16 +7,17 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
-import net.rbk.minery.Minery;
+import net.rbk.shinyandtiny.Bloques.ModBlocks;
+import net.rbk.shinyandtiny.ShinyAndTiny;
 
 public class DGBlockState extends BlockStateProvider {
     public DGBlockState(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, Minery.MODID, exFileHelper);
+        super(output, ShinyAndTiny.MODID, exFileHelper);
     }
 
     @Override
     protected void registerStatesAndModels() {
-   //Aca se registran los modelos de los items
+    blockWithItem(ModBlocks.BANITE_ORE);
     }
 
 

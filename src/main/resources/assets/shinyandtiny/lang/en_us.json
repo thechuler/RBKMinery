@@ -1,0 +1,17 @@
+{
+  "tooltip.shinyandtiny.purity": "Purity: ",
+  "tooltip.shinyandtiny.flavor": "Flavor: %s",
+  "tooltip.shinyandtiny.flavor.repulsive": "Repulsive",
+  "tooltip.shinyandtiny.flavor.disgusting": "Disgusting",
+  "tooltip.shinyandtiny.flavor.okay": "Okay",
+  "tooltip.shinyandtiny.flavor.good": "Good",
+  "tooltip.shinyandtiny.flavor.exquisite": "Exquisite",
+  "tooltip.shinyandtiny.flavor.unknown": "Unknown",
+
+  "block.shinyandtiny.bananite_ore":"Bananite Ore",
+
+  "item.shinyandtiny.hammer":"Hammer",
+  "item.shinyandtiny.bananite":"Bananite",
+  "item.shinyandtiny.bananite_bat":"Bananite Bat",
+  "item.shinyandtiny.bananite_geode":"Bananite Geode"
+}

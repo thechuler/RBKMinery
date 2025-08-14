@@ -1,4 +1,4 @@
-package net.rbk.minery;
+package net.rbk.shinyandtiny;
 
 import java.util.List;
 

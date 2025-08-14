@@ -1,12 +1,12 @@
-package net.rbk.minery.datagen;
+package net.rbk.shinyandtiny.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.rbk.shinyandtiny.Item.ModItems;
+
 import java.util.concurrent.CompletableFuture;
 
 
@@ -20,7 +20,16 @@ public class DGRecetas extends RecipeProvider implements IConditionBuilder {
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
-        //Aca se pueden registrar las recetas de crafteo
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.BANANITE_BAT.get())
+                .pattern("  B")
+                .pattern(" B ")
+                .pattern("S  ")
+                .define('B', ModItems.BANANITE.get())
+                .define('S', Items.STICK)
+                .unlockedBy("has_banite", has(ModItems.BANANITE.get()))
+                .save(recipeOutput);
+
     }
 
 

@@ -1,4 +1,4 @@
-package net.rbk.minery.Otros;
+package net.rbk.shinyandtiny.Otros;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;

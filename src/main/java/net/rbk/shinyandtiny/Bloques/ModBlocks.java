@@ -1,27 +1,31 @@
-package net.rbk.minery.Bloques;
+package net.rbk.shinyandtiny.Bloques;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.rbk.minery.Item.ModItems;
-import net.rbk.minery.Minery;
+import net.rbk.shinyandtiny.Item.ModItems;
+import net.rbk.shinyandtiny.ShinyAndTiny;
 import java.util.function.Supplier;
 
 //Esta clase es muy parecida a la de los items en cuanto a registro solo que con algunas salvedades.
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOQUES =
-            DeferredRegister.createBlocks(Minery.MODID);
+            DeferredRegister.createBlocks(ShinyAndTiny.MODID);
 
 
-/* Ejemplo de registro de bloque simple--------------
-    public static final DeferredBlock<Block> FROGRONK_MEAT = registerBlock("frogronk_meat",
+
+
+    public static final DeferredBlock<Block> BANITE_ORE = registerBlock("bananite_ore",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.SLIME_BLOCK)));
-*/
+                    .strength(2f).sound(SoundType.STONE)));
+
+
 
 
 
