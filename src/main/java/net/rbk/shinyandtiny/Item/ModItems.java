@@ -1,6 +1,8 @@
 package net.rbk.shinyandtiny.Item;
 
 
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 
@@ -8,6 +10,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.rbk.shinyandtiny.Item.custom.*;
+import net.rbk.shinyandtiny.Item.templates.ORE_STATS;
 import net.rbk.shinyandtiny.ShinyAndTiny;
 
 /*Esta clase se encarga de registrar los items. Minecraft necesita que registremos los items para

@@ -1,14 +1,16 @@
-package net.rbk.shinyandtiny.Item.custom;
+package net.rbk.shinyandtiny.Item.templates;
 
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.rbk.shinyandtiny.DataComponent.ModDataComponent;
-import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Consumer;
+
 
 public abstract class EdibleOre extends AbstractOre {
 
@@ -24,7 +26,7 @@ public abstract class EdibleOre extends AbstractOre {
     protected abstract Holder<MobEffect> getEffectForFlavor(int flavor);
 
     @Override
-    public @Nullable FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
+    public  FoodProperties getFoodProperties(ItemStack stack,  LivingEntity entity) {
         if (stack.has(ModDataComponent.FLAVOR) && stack.has(ModDataComponent.PURITY)) {
             int flavor = stack.get(ModDataComponent.FLAVOR);
             float purity = stack.get(ModDataComponent.PURITY).floatValue();
@@ -48,4 +50,7 @@ public abstract class EdibleOre extends AbstractOre {
         }
         return super.getFoodProperties(stack, entity);
     }
+
+
+ 
 }

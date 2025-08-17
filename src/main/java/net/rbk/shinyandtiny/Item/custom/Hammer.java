@@ -10,6 +10,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.rbk.shinyandtiny.Item.ModItems;
+import net.rbk.shinyandtiny.Item.templates.AbstractGeode;
+import net.rbk.shinyandtiny.Item.templates.AbstractOre;
 import net.rbk.shinyandtiny.Otros.Utilidades;
 
 

@@ -13,8 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.rbk.shinyandtiny.DataComponent.ModDataComponent;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+
 
 public class BananiteBat extends Item {
 
@@ -26,7 +25,7 @@ public class BananiteBat extends Item {
 
 
     @Override
-    public @Nullable FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
+    public  FoodProperties getFoodProperties(ItemStack stack,  LivingEntity entity) {
         if (stack.has(ModDataComponent.FLAVOR) && stack.has(ModDataComponent.PURITY)) {
             int flavor = stack.get(ModDataComponent.FLAVOR);
             return new FoodProperties.Builder()
@@ -50,14 +49,14 @@ public class BananiteBat extends Item {
 
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
+    public  InteractionResultHolder<ItemStack> use( Level level, Player player,  InteractionHand hand) {
         player.startUsingItem(hand);
         return InteractionResultHolder.consume(player.getItemInHand(hand));
     }
 
 
     @Override
-    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity livingEntity) {
+    public  ItemStack finishUsingItem( ItemStack stack,  Level level,  LivingEntity livingEntity) {
         if (livingEntity instanceof Player player) {
             FoodProperties foodProps = stack.getFoodProperties(player);
             if (foodProps != null) {

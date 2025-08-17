@@ -2,6 +2,7 @@ package net.rbk.shinyandtiny;
 
 import net.rbk.shinyandtiny.Bloques.ModBlocks;
 import net.rbk.shinyandtiny.DataComponent.ModDataComponent;
+import net.rbk.shinyandtiny.Efectos.ModEffects;
 import net.rbk.shinyandtiny.Item.CreativeTab;
 import net.rbk.shinyandtiny.Item.ModItems;
 import org.slf4j.Logger;
@@ -32,6 +33,7 @@ public class ShinyAndTiny {
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+        ModEffects.registrar(modEventBus);
         ModItems.registrar(modEventBus);
         ModDataComponent.registrar(modEventBus);
         CreativeTab.registrar(modEventBus);

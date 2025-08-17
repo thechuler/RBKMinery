@@ -2,12 +2,24 @@ package net.rbk.shinyandtiny.Eventos;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
 import net.rbk.shinyandtiny.DataComponent.ModDataComponent;
+import net.rbk.shinyandtiny.Efectos.GeoTouch;
+import net.rbk.shinyandtiny.Efectos.ModEffects;
 import net.rbk.shinyandtiny.ShinyAndTiny;
+
+import java.util.List;
 
 
 @EventBusSubscriber(modid = ShinyAndTiny.MODID)
@@ -19,6 +31,38 @@ public class ModServerEvents {
         purityToolTip(event);
         flavorToolTip(event);
     }
+
+
+
+    @SubscribeEvent
+    public static void onBreakBlock(BlockEvent.BreakEvent event) {
+        GeoTouch(event);
+    }
+
+
+
+private static void GeoTouch(BlockEvent.BreakEvent event){
+    BlockState bloque = event.getState();
+    if (event.getPlayer().hasEffect(ModEffects.GEOTOUCH)) {
+        if (bloque.is(Tags.Blocks.ORES)) {
+            LootParams.Builder lootBuilder = new LootParams.Builder((ServerLevel) event.getLevel())
+                    .withParameter(LootContextParams.ORIGIN, event.getPos().getCenter())
+                    .withParameter(LootContextParams.TOOL, event.getPlayer().getMainHandItem())
+                    .withOptionalParameter(LootContextParams.THIS_ENTITY, event.getPlayer());
+
+            List<ItemStack> drops = bloque.getDrops(lootBuilder);
+
+
+            event.setCanceled(true);
+            event.getLevel().destroyBlock(event.getPos(), false);
+            for (ItemStack drop : drops) {
+                ItemStack extra = drop.copy();
+                extra.grow(drop.getCount());
+                Block.popResource((Level) event.getLevel(), event.getPos(), extra);
+            }
+        }
+    }
+}
 
 
 

@@ -1,4 +1,4 @@
-package net.rbk.shinyandtiny.Item.custom;
+package net.rbk.shinyandtiny.Item.templates;
 
 import net.minecraft.world.item.Item;
 

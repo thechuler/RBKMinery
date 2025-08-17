@@ -3,8 +3,10 @@ package net.rbk.shinyandtiny.Item.custom;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
+import net.rbk.shinyandtiny.Item.templates.EdibleOre;
+import net.rbk.shinyandtiny.Item.templates.ORE_STATS;
 
-public class Bananite extends EdibleOre{
+public class Bananite extends EdibleOre {
     public Bananite(Properties properties, ORE_STATS... allowedStats) {
         super(properties, allowedStats);
     }

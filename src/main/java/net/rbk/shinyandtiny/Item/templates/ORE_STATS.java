@@ -1,4 +1,4 @@
-package net.rbk.shinyandtiny.Item.custom;
+package net.rbk.shinyandtiny.Item.templates;
 
 
 //Esta es una lista de las estadisticas que puede tener un ore
