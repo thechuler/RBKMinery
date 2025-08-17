@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_banite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "shinyandtiny:bananite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "shinyandtiny:bananite_bat"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_banite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "shinyandtiny:bananite_bat"
+    ]
+  }
+}
